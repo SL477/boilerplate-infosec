@@ -16,8 +16,8 @@ var app = express();              // Do Not Edit
 // [Helmet](https://github.com/helmetjs/helmet) helps you secure your
 // Express apps by setting various HTTP headers.
 // Install the package, then require it.
-
-
+var helmet = require('helmet');
+//app.use(helmet());
 
 /** 2) Hide potentially dangerous information - `helmet.hidePoweredBy()` */
 
@@ -30,6 +30,9 @@ var app = express();              // Do Not Edit
 // people off. e.g. `helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' })`
 
 // Use `helmet.hidePoweredBy()``
+//app.disable('x-powered-by');
+//app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0'}));
+app.use(helmet.hidePoweredBy());
 
 
 
